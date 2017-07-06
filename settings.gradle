@@ -1,0 +1,5 @@
+rootProject.name = 'springboot-multimodule-gradle-boilerplate'
+
+include 'boot-api'
+include 'boot-logger'
+include 'boot-exceptions'

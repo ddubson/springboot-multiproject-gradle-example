@@ -1,0 +1,28 @@
+buildscript {
+    repositories { mavenCentral() }
+    dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.4.RELEASE") }
+}
+
+allprojects {
+    apply plugin: 'application'
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+project(":boot-api") {
+    apply plugin: 'org.springframework.boot'
+
+    dependencies {
+        compile project(":boot-logger")
+        compile project(":boot-exceptions")
+        compile "org.springframework.boot:spring-boot-starter:1.5.4.RELEASE"
+    }
+}
+
+project(":boot-logger") {}
+
+project(":boot-exceptions") {}
+
